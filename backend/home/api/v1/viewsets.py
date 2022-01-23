@@ -1,6 +1,11 @@
 from rest_framework import viewsets
-from home.models import Student, Teacher
-from .serializers import StudentSerializer, TeacherSerializer
+from home.models import Login, Signup, Student, Teacher
+from .serializers import (
+    LoginSerializer,
+    SignupSerializer,
+    StudentSerializer,
+    TeacherSerializer,
+)
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -50,3 +55,21 @@ class StudentViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Student.objects.all()
+
+
+class LoginViewSet(viewsets.ModelViewSet):
+    serializer_class = LoginSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Login.objects.all()
+
+
+class SignupViewSet(viewsets.ModelViewSet):
+    serializer_class = SignupSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Signup.objects.all()

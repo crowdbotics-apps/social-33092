@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Student, Teacher
+from home.models import Login, Signup, Student, Teacher
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -85,4 +85,16 @@ class TeacherSerializer(serializers.ModelSerializer):
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
+        fields = "__all__"
+
+
+class LoginSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Login
+        fields = "__all__"
+
+
+class SignupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Signup
         fields = "__all__"

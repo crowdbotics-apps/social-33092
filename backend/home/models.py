@@ -24,3 +24,23 @@ class Student(models.Model):
         max_digits=30,
         decimal_places=10,
     )
+
+
+class Login(models.Model):
+    "Generated Model"
+    email = models.EmailField(
+        max_length=254,
+    )
+    password = models.CharField(
+        max_length=256,
+    )
+
+
+class Signup(models.Model):
+    "Generated Model"
+    email = models.EmailField(
+        max_length=254,
+    )
+    password = models.CharField(
+        max_length=256,
+    )
