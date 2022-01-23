@@ -24,7 +24,7 @@ const Onboarding = ({ navigation }) =>  {
   }
 
   const onDone = () => {
-    navigation.navigate(REDIRECT_SCREEN_NAME)
+    navigation.navigate("LoginScreen")
   }
 
 
